@@ -25,7 +25,7 @@ public class LocationController {
     this.locationService = locationService;
   }
 
-  @GetMapping(value = "/id/{id}")
+  @GetMapping(value = "/location/id/{id}")
   public Location readLocation(@PathVariable String id){
     LOGGER.info("Readlocation");
     return locationService.readLocation(id);

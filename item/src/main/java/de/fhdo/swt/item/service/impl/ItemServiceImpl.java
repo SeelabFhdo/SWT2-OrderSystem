@@ -15,18 +15,22 @@ public class ItemServiceImpl implements ItemService {
     this.itemRepository = itemRepository;
   }
 
+  @Override
   public Item createItem(Item item){
     return itemRepository.save(item);
   }
 
+  @Override
   public Item updateItem(Item item) {
     return itemRepository.save(item);
   }
 
+  @Override
   public Item readItem(String id){
     return itemRepository.findById(id).orElseGet(null);
   }
 
+  @Override
   public void deleteItem(Item item) {
     itemRepository.delete(item);
   }
