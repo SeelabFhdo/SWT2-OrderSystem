@@ -1,6 +1,5 @@
 package de.fhdo.swt.order.service.impl;
 
-import com.netflix.discovery.converters.Auto;
 import de.fhdo.swt.order.client.ItemFeignClient;
 import de.fhdo.swt.order.client.LocationFeignClient;
 import de.fhdo.swt.order.entity.Invoice;
@@ -42,7 +41,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     Invoice invoice = new Invoice();
 
     invoice.setInvoiceId(location.getId() + order.getId());
-    invoice.setInvoiceReceiver(location.getBuyer());
+    invoice.setInvoiceReceiver(location.getOwner());
     invoice.setLocation(location);
     invoice.setTotalAmong(0);
     List<String> itemNameList = new LinkedList<>();

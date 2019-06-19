@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Location {
   private String id;
-  private String buyer;
+  private String owner;
   private String street;
   private String streetNumber;
   private int zipCode;
@@ -13,10 +13,10 @@ public class Location {
   public Location() {
   }
 
-  public Location(String id, String buyer, String street, String streetNumber, int zipCode,
+  public Location(String id, String owner, String street, String streetNumber, int zipCode,
       String city) {
     this.id = id;
-    this.buyer = buyer;
+    this.owner = owner;
     this.street = street;
     this.streetNumber = streetNumber;
     this.zipCode = zipCode;
@@ -31,12 +31,12 @@ public class Location {
     this.id = id;
   }
 
-  public String getBuyer() {
-    return buyer;
+  public String getOwner() {
+    return owner;
   }
 
-  public void setBuyer(String buyer) {
-    this.buyer = buyer;
+  public void setOwner(String owner) {
+    this.owner = owner;
   }
 
   public String getStreet() {
@@ -75,7 +75,7 @@ public class Location {
   public String toString() {
     return "Location{" +
         "id='" + id + '\'' +
-        ", buyer='" + buyer + '\'' +
+        ", owner='" + owner + '\'' +
         ", street='" + street + '\'' +
         ", streetNumber='" + streetNumber + '\'' +
         ", zipCode=" + zipCode +
@@ -94,7 +94,7 @@ public class Location {
     Location location = (Location) o;
     return zipCode == location.zipCode &&
         Objects.equals(id, location.id) &&
-        Objects.equals(buyer, location.buyer) &&
+        Objects.equals(owner, location.owner) &&
         Objects.equals(street, location.street) &&
         Objects.equals(streetNumber, location.streetNumber) &&
         Objects.equals(city, location.city);
@@ -102,6 +102,6 @@ public class Location {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, buyer, street, streetNumber, zipCode, city);
+    return Objects.hash(id, owner, street, streetNumber, zipCode, city);
   }
 }
