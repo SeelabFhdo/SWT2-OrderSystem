@@ -21,12 +21,12 @@ public class ItemController {
     this.itemService = itemService;
   }
 
-  @PutMapping(value = "/")
+  @PutMapping(value = "/item/")
   public Item createItem(@RequestBody Item item) {
     return itemService.createItem(item);
   }
 
-  @PostMapping(value = "/")
+  @PostMapping(value = "/item/")
   public Item updateItem(@RequestBody Item item) {
     return itemService.updateItem(item);
   }

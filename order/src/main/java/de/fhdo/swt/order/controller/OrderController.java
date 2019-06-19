@@ -2,8 +2,6 @@ package de.fhdo.swt.order.controller;
 
 import de.fhdo.swt.order.entity.Order;
 import de.fhdo.swt.order.service.OrderService;
-import java.util.LinkedList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,12 +21,12 @@ public class OrderController {
     this.orderService = orderService;
   }
 
-  @PutMapping(value = "/")
+  @PutMapping(value = "/order/")
   public Order createOrder(@RequestBody Order order){
     return orderService.createOrder(order);
   }
 
-  @PostMapping(value = "/")
+  @PostMapping(value = "/order/")
   public Order updateOrder(@RequestBody Order order){
     return orderService.updateOrder(order);
   }
